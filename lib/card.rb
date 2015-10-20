@@ -1,12 +1,5 @@
 # A simple representation of a playing card.
 class Card
-  include Comparable
-
-  def <=>(other)
-    [RANKS.index(rank), SUITS.index(suit)] <=>
-      [RANKS.index(other.rank), SUITS.index(other.suit)]
-  end
-
   SUITS = %w(C D H S)
   RANKS = [(2..10).to_a, %w(J Q K A)].flatten
 

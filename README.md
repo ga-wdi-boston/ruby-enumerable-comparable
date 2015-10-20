@@ -89,6 +89,16 @@ The `Math` module hides mathematical functions inside the name-space `Math` so t
 
 The [Comparable](http://ruby-doc.org/core-2.2.3/Comparable.html) module provide common operators to a class that implements the `<=>` (spaceship) operator.  Let's look at `lib/card.rb`.
 
+### Practice
+
+How do you compare cards?
+
+In your squads create an algorithm to determine which of two cards, if either, is "greater" than the other.
+
+### Demo
+
+Adding the spaceship operator to `Card`.
+
 ### Practice - A list as a deck of cards
 
 Let's simulate Enumerable methods using a deck of cards.  In your squad, one of you will act as the method and another as the block.  The third squad member will record the result.
