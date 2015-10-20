@@ -127,9 +127,11 @@ Let's modify that script to mimic the behavior of the `wc` (word count) utility.
 
 Now we'll read two files at the same time.  This is a good time to look at [Enumerator](http://ruby-doc.org/core-2.2.3/Enumerator.html) which is what gets returned when we call `each` without a block.
 
+We'll also need to look briefly at exception handling as Enumerator relies on this mechanism.
+
 ## Cards in Ruby
 
-Let's explore the start of writing a card game in Ruby.
+Let's explore the start of writing a card game in Ruby using `lib/card.rb` and `lib/deck.rb`.
 
 ## Ranges as lists
 
