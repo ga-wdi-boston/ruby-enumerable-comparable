@@ -67,7 +67,7 @@ Alternating between JavaScript and Ruby, write a script that:
 The following table contains a mapping of some of the methods that potentially touch all the elements in an Array.
 
 JavaScript | Ruby
-----------   ----
+---------- | ----
 `every` | `all?`
 `filter` | `select`
 `forEach` | `each`
