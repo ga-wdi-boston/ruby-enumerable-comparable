@@ -4,7 +4,9 @@
 
 ## Introduction
 
-An enumerable is an ordered list of items. The list may be empty.  If not empty, the list has a first item followed by a list containing the rest of the items. This is not a rigorous definition.
+A list is an abstract data type (ADT) that represents an ordered list of items.  The list may be empty.  If not empty, the list has a first item followed by a list containing the rest of the items. This is not a rigorous definition.
+
+An enumerable is Ruby's implementation of `list`.
 
 We'll look at list processing techniques and the wide range of areas in which they are applicable.
 
@@ -12,14 +14,14 @@ We'll look at list processing techniques and the wide range of areas in which th
 
 By the end of this lesson, students should be able to:
 
-- Use `Enumerable` methods to process arbitrary lists in a variety of ways
-- Describe how `each` is used to implement other enumerable methods
+- Use `any?` and `all?` to test `Enumerables` elements
+- Use `map` to create an `Array` of transformed `Enumerable` elements
+- Use `reduce` to "summarize" the elements in an `Enumerable`
 - Process strings and streams as lists
-- Use set operations on Arrays.
 
 ## Instructions
 
-Fork, clone, and bundle install.
+Fork, clone, branch (lesson), npm install, and bundle install.
 
 ## Lists are ubiquitous
 
@@ -28,6 +30,37 @@ Fork, clone, and bundle install.
 What are some types of lists?
 
 What are some things we'd put on those lists?
+
+## Array in JavaScript versus Ruby
+
+We'll compare and contrast Ruby's [Array](http://ruby-doc.org/core-2.2.2/Array.html) with JavaScript's [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
+
+First let's compare the list of methods for Array in each language.
+
+### Demo
+
+`bin/people-array.js` and `bin/people-array.rb` `data/people.csv`
+
+### Practice
+
+The following table contains a mapping of some of the methods that potentially touch all the elements in an Array.
+
+JavaScript | Ruby
+----------   ----
+`every` | `all?`
+`filter` | `select`
+`forEach` | `each`
+`map` | `map`
+`reduce` | `reduce`
+`some` | `any?`
+
+Note that Ruby, by convention, indicates a predicate method with a terminal `?`.
+
+What do you notice?  Where are `any?` and `reduce`?
+
+## The Enumerable Module
+
+Ruby's [Enumerable](http://ruby-doc.org/core-2.2.2/Enumerable.html) module provides many list processing methods based on the method `each`.
 
 ### Create a list of numbers
 
@@ -76,28 +109,9 @@ We'll see how strings can be treated as lists even though thewy don't include En
 
 Let's explore the documentation for these methods.
 
-## Set operations on arrays
-
-```ruby
-[1] pry(main)> friends = %w(Amy Bob Chris)
-=> ["Amy", "Bob", "Chris"]
-[2] pry(main)> coworkers = %w(Amy Chris Daryl)
-=> ["Amy", "Chris", "Daryl"]
-[3] pry(main)> friends - coworkers
-=> ["Bob"]
-[4] pry(main)> friends + coworkers
-=> ["Amy", "Bob", "Chris", "Amy", "Chris", "Daryl"]
-[5] pry(main)> (friends + coworkers).sort.uniq
-=> ["Amy", "Bob", "Chris", "Daryl"]
-[6] pry(main)> friends | coworkers
-=> ["Amy", "Bob", "Chris", "Daryl"]
-```
-
 ## Official Documentation
 
-- **[Enumerable](http://ruby-doc.org/core-2.2.2/Enumerable.html)**
 - **[Comparable](http://ruby-doc.org/core-2.2.2/Comparable.html)**
-- **[Array](http://ruby-doc.org/core-2.2.2/Array.html)**
 - **[Hash](http://ruby-doc.org/core-2.2.2/Hash.html)**
 - **[String](http://ruby-doc.org/core-2.2.2/String.html)**
 - **[CSV](http://ruby-doc.org/stdlib-2.2.2/libdoc/csv/rdoc/CSV.html)**
