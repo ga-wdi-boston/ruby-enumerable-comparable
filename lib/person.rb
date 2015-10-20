@@ -2,8 +2,6 @@
 require 'date'
 #
 class Person
-  attr_reader :dob
-
   def initialize(h)
     h.keys.each do |key|
       instance_variable_set(('@' + key.to_s).to_sym, h[key])

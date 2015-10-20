@@ -17,7 +17,7 @@ By the end of this lesson, students should be able to:
 - Use `any?` and `all?` to test `Enumerables` elements
 - Use `map` to create an `Array` of transformed `Enumerable` elements
 - Use `reduce` to "summarize" the elements in an `Enumerable`
-- Process strings and streams as lists
+- Process streams and strings as lists
 
 ## Instructions
 
@@ -33,15 +33,36 @@ What are some things we'd put on those lists?
 
 ## Array in JavaScript versus Ruby
 
-We'll compare and contrast Ruby's [Array](http://ruby-doc.org/core-2.2.2/Array.html) with JavaScript's [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
+We'll compare and contrast Ruby's [Array](http://ruby-doc.org/core-2.2.3/Array.html) with JavaScript's [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array).
 
 First let's compare the list of methods for Array in each language.
 
 ### Demo
 
-`bin/people-array.js` and `bin/people-array.rb` `data/people.csv`
+Ruby and JavaScript Arrays both have a map and reduce method.  Let's explore using them to see the similarities and differences.
+
+Note that Ruby, by convention, denotes a predicate method with a terminal `?`.
+
+```ruby
+[1] pry(main)> fibs = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34]
+```
+
+```js
+> var fibs = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34];
+```
+
+In JavaScript, we use a function to control the behavior of Array methods.  In Ruby, we use a block ( `{|p|}` for one line blocks, `do ... end` for multi-line blocks).
 
 ### Practice
+
+Alternating between JavaScript and Ruby, write a script that:
+
+- calculates the sum of the first ten Fibonacci numbers
+- calculates the product of the first ten Fibonacci numbers
+- calculates the sum of the the odd Fibonacci numbers
+- calculates the product of the even Fibonacci numbers (excluding zero).
+
+## Deeper look
 
 The following table contains a mapping of some of the methods that potentially touch all the elements in an Array.
 
@@ -54,64 +75,91 @@ JavaScript | Ruby
 `reduce` | `reduce`
 `some` | `any?`
 
-Note that Ruby, by convention, indicates a predicate method with a terminal `?`.
-
 What do you notice?  Where are `any?` and `reduce`?
 
 ## The Enumerable Module
 
-Ruby's [Enumerable](http://ruby-doc.org/core-2.2.2/Enumerable.html) module provides many list processing methods based on the method `each`.
+Ruby's [Enumerable](http://ruby-doc.org/core-2.2.3/Enumerable.html) module provides many list processing methods based on the method `each`.  Ruby's Array class includes the Enumerable module.
 
-### Create a list of numbers
+### Modules
+
+In Ruby, modules serve two purposes.  The first is to create name spaces.  The second is to supply common behavior to a class.
+
+The `Math` module hides mathematical functions inside the name-space `Math` so that short and common names don't pollute the global name-space (e.g. `Math::Pi` or `Math.cos`).
+
+The [Comparable](http://ruby-doc.org/core-2.2.3/Comparable.html) module provide common operators to a class that implements the `<=>` (spaceship) operator.  Let's look at `lib/card.rb`.
+
+### Practice - A list as a deck of cards
+
+Let's simulate Enumerable methods using a deck of cards.  In your squad, one of you will act as the method and another as the block.  The third squad member will record the result.
+
+### Code along
+
+Let's use the scripts `bin/people-array.js` and `bin/people-array.rb` to explore Array methods in both Ruby and JavaScript.  The data in the objects we'll be processing comes from the comma separated values (CSV) file `data/people.csv`
+
+The Person objects we'll test against have properties/methods that align with the headers in `data/people.csv` plus the method `age`
+
+### Practice
+
+Use the `bin/people-array.*` scripts to
+
+- Count all the people who are older than you (or just pick an age).  Younger.
+- Count all the people whose first name and last name start with the same letter.
+- Calculate the average age of all the people.
+
+## Files as lists
+
+Ruby's [File](http://ruby-doc.org/core-2.2.3/File.html) includes `Enumerable` so we can use all of those methods to process files a character or a line (the default) at a time.
+
+Other enumerable classes related to working with files include [IO](http://ruby-doc.org/core-2.2.3/IO.html), and [Dir](http://ruby-doc.org/core-2.2.3/Dir.html).
+
+I used the Ruby Standard Library class [CSV](http://ruby-doc.org/stdlib-2.2.3/libdoc/csv/rdoc/CSV.html) to load data for the `bin/*-array.rb` scripts.
+
+### Code along
+
+Using `bin/read-file.rb` we'll read all the lines in a file and print them.
+
+### Practice
+
+Let's modify that script to mimic the behavior of the `wc` (word count) utility.
+
+### Code along
+
+Now we'll read two files at the same time.  This is a good time to look at [Enumerator](http://ruby-doc.org/core-2.2.3/Enumerator.html) which is what gets returned when we call `each` without a block.
+
+## Cards in Ruby
+
+Let's explore the start of writing a card game in Ruby.
+
+## Ranges as lists
+
+Ruby's [Range](http://ruby-doc.org/core-2.2.3/Range.html) class provides a convenient way to express sequence of integers.
 
 ```ruby
-[1] pry(main)> (1..10).map(&:itself)
-=> [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+[1] pry(main)> 1..10
 ```
 
-### Manipulate a list of numbers with `map` and `reduce`
+### Code along - Stepped Range
 
-```ruby
-[1] pry(main)> out_of_five = [3, 5, 4, 2, 4, 5]
-=> [3, 5, 4, 2, 4, 5]
-[3] pry(main)> average_out_of_five = out_of_five.reduce(:+)/out_of_five.length
-=> 3
-[4] pry(main)> average_out_of_five = out_of_five.reduce(:+)/out_of_five.length.to_f
-=> 3.8333333333333335
-[5] pry(main)> out_of_ten = out_of_five.map {|score| score * 2 }
-=> [6, 10, 8, 4, 8, 10]
-[6] pry(main)> average_out_of_ten = out_of_five.map{|score| score * 2 }.reduce(:+)/out_of_five.length
-=> 7
-[7] pry(main)> average_out_of_ten = out_of_five.map{|e| e * 2 }.reduce(:+)/out_of_five.length.to_f
-=> 7.666666666666667
-```
-Method chaining is a Ruby idiom.
+We'll build a new range class that increments by a provided value.  The requirement to creating an `Enumerable` is a correct implementation of the method `each`.
 
-## The Enumerable Module
+## Hashes as lists
 
-### Creating practice data using CSV
+[Hash](http://ruby-doc.org/core-2.2.3/Hash.html) includes Enumerable so we can treat it as a list
 
-We'll use the files and script in `data/` to explore file processing.  Then we'll explore how to create practice data for the brainstormed lists.
+## Strings as lists
 
-### Testing and manipulating practice data
+We'll see how - **[String](http://ruby-doc.org/core-2.2.3/String.html)** can be treated as a lists even though it doesn't include Enumerable.  String accomplishes this using the methods that start `each_` which return an `Enumerator`.
 
-We'll go through a set of mini-labs for most of the methods provided by enumerable.
+### Practice
 
-### Hashes as lists
+Let's implement `normalize_words`, `unique_words`, `word_count`, and `word_frequencies` in `lib/string.rb`
 
-Hash includes Enumerable so we can treat it as a list
+## Additional resources
 
-### Strings as lists
+Two images to give you a sense of the relationships in Ruby.
 
-We'll see how strings can be treated as lists even though thewy don't include Enumerable.
+- [Hand drawn](http://farm6.staticflickr.com/5443/10075536704_84aa13676a_o.jpg)
+- [And not](http://i.stack.imgur.com/1taqB.png)
 
-### `each` and similar methods
-
-Let's explore the documentation for these methods.
-
-## Official Documentation
-
-- **[Comparable](http://ruby-doc.org/core-2.2.2/Comparable.html)**
-- **[Hash](http://ruby-doc.org/core-2.2.2/Hash.html)**
-- **[String](http://ruby-doc.org/core-2.2.2/String.html)**
-- **[CSV](http://ruby-doc.org/stdlib-2.2.2/libdoc/csv/rdoc/CSV.html)**
+These images may diverge slightly from the actual relationships, Ruby is an evolving language, but do give a sense of much of what goes on.
