@@ -1,6 +1,6 @@
 ![General Assembly Logo](http://i.imgur.com/ke8USTq.png)
 
-# An Introduction to Ruby Enumerables
+# Ruby Enumerables
 
 ## Introduction
 
