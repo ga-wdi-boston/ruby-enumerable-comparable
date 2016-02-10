@@ -175,3 +175,8 @@ Two images to give you a sense of the relationships in Ruby.
 - [And not](http://i.stack.imgur.com/1taqB.png)
 
 These images may diverge slightly from the actual relationships, Ruby is an evolving language, but do give a sense of much of what goes on.
+
+## [License](LICENSE)
+
+Source code distributed under the MIT license. Text and other assets copyright
+General Assembly, Inc., all rights reserved.
