@@ -17,4 +17,8 @@ class SteppedRange
   def initialize(start:, stop:, step: 1)
     @start, @stop, @step = start, stop, step
   end
+
+  def to_a
+    map(&:itself)
+  end
 end
