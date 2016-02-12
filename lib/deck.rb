@@ -17,14 +17,7 @@ class Deck < Array
   end
 
   def shuffle
-    6.times do
-      right = slice(count / 2, count)
-      left = slice(0, count / 2)
-
-      replace(left.zip(right).flatten.compact)
-    end
-
-    self
+    replace(super)
   end
 
   def draw
