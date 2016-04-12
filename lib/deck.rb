@@ -21,6 +21,5 @@ class Deck < Array
   end
 
   def deal(cards, *hands)
-
   end
 end

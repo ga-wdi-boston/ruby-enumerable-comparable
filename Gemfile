@@ -1,8 +1,7 @@
-#
 source 'https://rubygems.org'
-ruby '2.2.4'
-
-gem 'rspec', '~> 3.3'
+ruby '2.3.0'
+gem 'rspec', '~> 3.4'
 gem 'pry', '~> 0.10'
-gem 'byebug', '~> 6.0'
-gem 'rubocop', '~> 0.36'
+gem 'rb-readline', '~> 0.5.3'
+gem 'byebug', '~> 8.2'
+gem 'pry-byebug', '~> 3.3'

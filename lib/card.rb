@@ -6,10 +6,10 @@ class Card
   attr_reader :suit, :rank
 
   def initialize(rank, suit)
-    raise ArgumentError,
-          "Suit: '#{suit}' not in #{SUITS}" unless SUITS.include? suit
-    raise ArgumentError,
-          "Rank: '#{rank}' not in #{RANKS}" unless RANKS.include? rank
+    fail ArgumentError,
+         "Suit: '#{suit}' not in #{SUITS}" unless SUITS.include? suit
+    fail ArgumentError,
+         "Rank: '#{rank}' not in #{RANKS}" unless RANKS.include? rank
 
     @suit = suit
     @rank = rank
