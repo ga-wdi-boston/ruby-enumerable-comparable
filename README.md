@@ -26,7 +26,7 @@ The [Comparable](http://ruby-doc.org/core-2.3.0/Comparable.html) module provide
  common operators to a class that implements the `<=>` (spaceship) operator.
 Let's look at `lib/card.rb`.
 
-### Practice
+### Lab - comparing cards
 
 How do you compare cards?
 
@@ -37,7 +37,7 @@ In your squads create an algorithm to determine which of two cards, if either,
 
 Adding the spaceship operator to `Card`.
 
-### Practice - A list as a deck of cards
+### Lab - A list as a deck of cards
 
 Let's simulate Enumerable methods using a deck of cards.  In your squad, one of
  you will act as the method and another as the block.
