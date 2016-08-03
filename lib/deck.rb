@@ -1,23 +1,28 @@
 require_relative 'card'
 
 # A simple represenation of a deck of playing cards
-class Deck < Array
+class Deck
   def initialize
     super
-    replace(Card::SUITS.map do |suit|
+    @deck = Card::SUITS.map do |suit|
       Card::RANKS.map { |rank| Card.new(rank, suit) }
-    end.flatten)
+    end.flatten
   end
 
   # swap front and back somewhere in the middle third.
   def cut
     random = Random.rand(count / 3)
     cut_point = (count / 3 + random)
-    replace(slice(cut_point, count - cut_point) + slice(0, cut_point))
+    @deck.replace(slice(cut_point, count - cut_point) + slice(0, cut_point))
   end
 
   def draw
-    shift
+    @deck.shift
+  end
+
+  def shuffle
+    @deck.shuffle!
+    self
   end
 
   def deal(cards, *hands)
