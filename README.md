@@ -18,35 +18,35 @@ By the end of this lesson, students should be able to:
 ## Introduction
 
 We'll explore an important Ruby mechanism for adding behavior to a class:
- mixins.
+mixins.
 
 ## The Comparable Module
-
-The [Comparable](http://ruby-doc.org/core-2.3.0/Comparable.html) module provide
- common operators to a class that implements the `<=>` (spaceship) operator.
-Let's look at `lib/card.rb`.
 
 ### Lab - comparing cards
 
 How do you compare cards?
 
 In your squads create an algorithm to determine which of two cards, if either,
- is "greater" than the other.
+is "greater" than the other.
 
 ### Demo
+
+The [Comparable](http://ruby-doc.org/core-2.3.0/Comparable.html) module provide
+common operators to a class that implements the `<=>` (spaceship) operator.
+Let's look at `lib/card.rb`.
 
 Adding the spaceship operator to `Card`.
 
 ### Lab - A list as a deck of cards
 
 Let's simulate Enumerable methods using a deck of cards.  In your squad, one of
- you will act as the method and another as the block.
-The third squad member will record the result.
+you will act as the method and another as the block. The third squad member will
+record the result.
 
 ### Cards in Ruby
 
 Let's explore the start of writing a card game in Ruby using `lib/card.rb` and
- `lib/deck.rb`.
+`lib/deck.rb`.
 
 ## The Enumerable Module
 
