@@ -1,7 +1,7 @@
 # A simple representation of a playing card.
 class Card
   SUITS = %w(C D H S).freeze
-  RANKS = [(2..10).to_a, %w(J Q K A)].flatten
+  RANKS = [(2..10).to_a, %w(J Q K A)].flatten.freeze
 
   attr_reader :suit, :rank
 
