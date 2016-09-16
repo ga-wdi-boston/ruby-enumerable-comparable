@@ -31,5 +31,10 @@ class Deck
   end
 
   def deal(cards, *hands)
+    cards.times do
+      hands.each do |hand|
+        hand << draw
+      end
+    end
   end
 end
