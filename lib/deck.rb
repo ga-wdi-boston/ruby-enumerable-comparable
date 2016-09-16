@@ -18,6 +18,7 @@ class Deck
     cut_point = (count / 3 + random)
     deck.replace deck.slice(cut_point, count - cut_point) +
                  deck.slice(0, cut_point)
+    self
   end
 
   def draw
