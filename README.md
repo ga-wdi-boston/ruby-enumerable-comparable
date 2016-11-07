@@ -37,7 +37,7 @@ is "greater" than the other.
 
 ### Demo
 
-The [Comparable](http://ruby-doc.org/core-2.3.0/Comparable.html) module provide
+The [Comparable](http://ruby-doc.org/core-2.3.1/Comparable.html) module provide
 common operators to a class that implements the `<=>` (spaceship) operator.
 Let's look at `lib/card.rb`.
 
@@ -56,7 +56,7 @@ Let's explore the start of writing a card game in Ruby using `lib/card.rb` and
 
 ## The Enumerable Module
 
-We'll build our own `list` using Ruby's [Enumerable](http://ruby-doc.org/core-2.3.0/Enumerable.html) module.
+We'll build our own `list` using Ruby's [Enumerable](http://ruby-doc.org/core-2.3.1/Enumerable.html) module.
 
 ### Code along - Stepped Range
 
