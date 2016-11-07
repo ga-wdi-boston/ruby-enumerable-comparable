@@ -64,6 +64,15 @@ We'll build a new range class that increments by a provided value.
 The key to creating an `Enumerable` class is a correct implementation of the
  `each` method.
 
+## Tasks
+
+Developers should run these often!
+
+-   `bin/rake nag`  (or `bundle exec rake nag`):
+    runs code quality analysis tools on your code and complains.
+-   `bin/rake test` (or `bundle exec rake test`): runs automated tests.
+
+
 ## Additional Resources
 
 -   [List ADT](https://en.wikipedia.org/wiki/List_%28abstract_data_type%29)
