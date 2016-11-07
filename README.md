@@ -5,6 +5,7 @@
 ## Prerequisites
 
 -   [Ruby Enumerable Builtins](https://github.com/ga-wdi-boston/ruby-enumerable-builtins)
+-   [Ruby Object](https://github.com/ga-wdi-boston/ruby-object)
 
 ## Objectives
 
