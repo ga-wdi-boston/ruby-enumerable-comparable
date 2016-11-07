@@ -2,18 +2,24 @@
 
 # Ruby Enumerable and Comparable
 
-## Instructions
-
-Fork, clone, branch (training), and bundle install.
-
 ## Prerequisites
+
+-   [Ruby Enumerable Builtins](https://github.com/ga-wdi-boston/ruby-enumerable-builtins)
 
 ## Objectives
 
-By the end of this lesson, students should be able to:
+By the end of this talk, developers should be able to:
 
 -   Add Comparable operators to a class.
 -   Add Enumerable methods to a class.
+
+## Preparation
+
+1.  Fork and clone this repository.
+    [FAQ](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
+1.  Create a new branch, `training`, for your work.
+1.  Checkout to the `training` branch.
+1.  Install dependencies with `bundle install`.
 
 ## Introduction
 
@@ -57,6 +63,10 @@ We'll build our own `list` using Ruby's [Enumerable](http://ruby-doc.org/core-2.
 We'll build a new range class that increments by a provided value.
 The key to creating an `Enumerable` class is a correct implementation of the
  `each` method.
+
+## Additional Resources
+
+-   [List ADT](https://en.wikipedia.org/wiki/List_%28abstract_data_type%29)
 
 ## [License](LICENSE)
 
