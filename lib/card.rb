@@ -22,10 +22,10 @@ class Card
 
   def initialize(rank, suit)
     unless SUITS.include? suit
-      raise ArgumentError "Suit: '#{suit}' not in #{SUITS}"
+      raise ArgumentError, "Suit: '#{suit}' not in #{SUITS}"
     end
     unless RANKS.include? rank
-      raise ArgumentError "Rank: '#{rank}' not in #{RANKS}"
+      raise ArgumentError, "Rank: '#{rank}' not in #{RANKS}"
     end
 
     @suit = suit
