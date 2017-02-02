@@ -4,7 +4,8 @@
 
 ## Prerequisites
 
--   [Ruby Enumerable Builtins](https://github.com/ga-wdi-boston/ruby-enumerable-builtins)
+-   [Ruby Enumerable
+    Builtins](https://github.com/ga-wdi-boston/ruby-enumerable-builtins)
 -   [Ruby Object](https://github.com/ga-wdi-boston/ruby-object)
 
 ## Objectives
@@ -47,8 +48,8 @@ Adding the spaceship operator to `Card`.
 ### Lab - A list as a deck of cards
 
 Let's simulate Enumerable methods using a deck of cards.  In your squad, one of
-you will act as the method and another as the block. The third squad member will
-record the result.
+you will act as the method and another as the block. The third squad member
+will record the result.
 
 ### Cards in Ruby
 
@@ -57,22 +58,22 @@ Let's explore the start of writing a card game in Ruby using `lib/card.rb` and
 
 ## The Enumerable Module
 
-We'll build our own `list` using Ruby's [Enumerable](http://ruby-doc.org/core-2.3.1/Enumerable.html) module.
+We'll build our own `list` using Ruby's
+[Enumerable](http://ruby-doc.org/core-2.3.1/Enumerable.html) module.
 
 ### Code along - Stepped Range
 
-We'll build a new range class that increments by a provided value.
-The key to creating an `Enumerable` class is a correct implementation of the
- `each` method.
+We'll build a new range class that increments by a provided value. The key to
+creating an `Enumerable` class is a correct implementation of the `each`
+method.
 
 ## Tasks
 
 Developers should run these often!
 
--   `bin/rake nag`  (or `bundle exec rake nag`):
-    runs code quality analysis tools on your code and complains.
+-   `bin/rake nag`  (or `bundle exec rake nag`): runs code quality analysis
+    tools on your code and complains.
 -   `bin/rake test` (or `bundle exec rake test`): runs automated tests.
-
 
 ## Additional Resources
 
