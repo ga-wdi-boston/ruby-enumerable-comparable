@@ -37,7 +37,7 @@ How do you compare cards?
 In your squads create an algorithm to determine which of two cards, if either,
 is "greater" than the other.
 
-### Demo
+### Demo - A Card Model
 
 The [Comparable](http://ruby-doc.org/core-2.3.1/Comparable.html) module provide
 common operators to a class that implements the `<=>` (spaceship) operator.
@@ -51,10 +51,31 @@ Let's simulate Enumerable methods using a deck of cards.  In your squad, one of
 you will act as the method and another as the block. The third squad member
 will record the result.
 
-### Cards in Ruby
+### Demo - A Deck Model
 
 Let's explore the start of writing a card game in Ruby using `lib/card.rb` and
 `lib/deck.rb`.
+
+## Private methods
+It's a best practice to keep our exposed API as small as necessary. I like to
+keep methods private by default (just like data is) by decorating them with
+the `private` method. This makes them uncallable outside the class definition.
+For example:
+
+```ruby
+class Foo
+  def bar
+    "baz"
+  end
+  private :bar
+
+  def qux
+    bar # this works
+  end
+end
+
+Foo.new.bar # this does not work
+```
 
 ## The Enumerable Module
 
