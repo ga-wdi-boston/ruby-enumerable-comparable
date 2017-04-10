@@ -4,6 +4,14 @@ require_relative 'card'
 
 # A simple represenation of a deck of playing cards
 class Deck
+  include Enumerable
+
+  def each
+    storage.each do |card|
+      yield card
+    end
+  end
+
   attr_reader :storage
   private :storage
 
@@ -33,5 +41,11 @@ class Deck
     self
   end
 
-  def deal(cards, *hands); end
+  def deal(cards, *hands)
+    cards.times do
+      hands.each do |hand|
+        hand << draw
+      end
+    end
+  end
 end
