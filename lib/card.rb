@@ -3,22 +3,22 @@
 # A simple representation of a playing card.
 class Card
   SUITS = %w[C D H S].freeze
-  RANKS = [(2..14).to_a, %w[J Q K A]].flatten.freeze
+  RANKS = (2..14).to_a.freeze
 
   attr_reader :suit, :rank
 
   def initialize(rank, suit)
     case rank
     when "J"
-      rank=11
+      rank = 11
     when "Q"
-      rank=12
+      rank = 12
     when "K"
-      rank=13
+      rank = 13
     when "A"
-      rank=14
+      rank = 14
     else
-      rank=rank.to_i
+      rank = rank.to_i
     end
 
     unless SUITS.include? suit
